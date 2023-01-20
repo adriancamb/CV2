@@ -1,0 +1,18 @@
+*{
+    font-family: "Roboto", 'Courier New', Courier, monospace;
+    color: white;
+    
+}
+h6{
+
+color: white !important;
+}
+.progress{
+    margin: 3%;
+}
+.verticaltext{
+    width:1px;
+    word-wrap: break-word;
+    white-space:pre-wrap; 
+ }
+ 
