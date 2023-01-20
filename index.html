@@ -20,6 +20,7 @@ git show a9468e0
 git remote remove origin
 
 git remote add origin https://github.com/adriancamb/CV2.git
+
 git push -u origin master
 
 git pull https://github.com/adriancamb/CV.git
@@ -37,8 +38,23 @@ git pull https://github.com/adriancamb/CV.git
         <link href="css/style.css" rel="stylesheet">
 
     </head>
+
+    <style>
+    .container-fluid{
+        padding-left: 15%;
+        padding-right: 10%;
+    }
+        
+    @media only screen and (max-width: 900px) {
+        .container-fluid{
+        padding-left: 8%;
+        padding-right: 3%;
+        }
+    }
+    </style>
     <body style="background-color: black">
-        <div class="container-fluid" style="padding-left: 13%; padding-right: 8%;">
+        
+        <div class="container-fluid">
             <div class="row justify-content-start">
                 <div id="columna1" class="col-md-3" style="background-color: #1C2833; margin: 5px">
                     <div id="imagen" class="row" style="justify-content: center; margin: 5%;padding-top: 20px;">
