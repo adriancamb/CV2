@@ -1,10 +1,15 @@
 function funcionResize() {
     $('#widthval').html($(document).width());        
-        if ($(window).width() < 1700) {
+        if ($(window).width() < 800) {
+            $('.container-fluid').css('padding-left', '5%');
+            $('.container-fluid').css('padding-right', '5%');
+        }
+        else if ($(window).width() < 1700) {
             $('.container-fluid').css('padding-left', '5%');
             $('.container-fluid').css('padding-right', '0%');
         }
-        else{
+        else
+        {
             $('.container-fluid').css('padding-left', '15%');
             $('.container-fluid').css('padding-right', '10%');
         }
