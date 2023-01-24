@@ -2,7 +2,7 @@ function funcionResize() {
     $('#widthval').html($(document).width());        
         if ($(window).width() < 800) {
             $('.container-fluid').css('padding-left', '5%');
-            $('.container-fluid').css('padding-right', '5%');
+            $('.container-fluid').css('padding-right', '7%');
         }
         else if ($(window).width() < 1700) {
             $('.container-fluid').css('padding-left', '5%');
