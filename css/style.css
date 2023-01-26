@@ -34,3 +34,17 @@ p,h5,h6{
 .badge{
     font-family:"Roboto", 'Courier New', Courier, monospace;
 }
+/*
+.borde{
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(13,202,240);
+    border-width: 1px;
+    margin: 2px;
+}
+*/
+hr{
+    color: rgb(13,202,240);
+    opacity: .8;
+    margin: 0px;
+}
