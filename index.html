@@ -11,6 +11,61 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/script.js"></script>
         
+        <!--    Agrego Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
+
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyC44cPvjv_fLgJxO_WhYjDyo4TlqjxUqXA",
+              authDomain: "cv-adrian-con-contador.firebaseapp.com",
+              projectId: "cv-adrian-con-contador",
+              storageBucket: "cv-adrian-con-contador.appspot.com",
+              messagingSenderId: "707944936891",
+              appId: "1:707944936891:web:f6042d974bb9a27beac09e",
+              measurementId: "G-VE8DK0RG01"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+
+            //gpt
+
+            firebase.initializeApp(firebaseConfig);
+
+            // Referencia a la base de datos Realtime
+            var database = firebase.database();
+
+            // Referencia a la ubicación del contador de visitas
+            var visitsRef = database.ref("visits");
+
+
+
+            var visitsRef = firebase.database().ref("/visits");
+
+            visitsRef.transaction(function(currentVisits) {
+            return (currentVisits || 0) + 1;
+            }, function(error, committed, snapshot) {
+            if (error) {
+                console.error(error);
+            } else if (committed) {
+                console.log("El número de visitas es: " + snapshot.val());
+            }
+            });
+            
+            //https://console.firebase.google.com/u/0/project/cv-adrian-con-contador/database/cv-adrian-con-contador-default-rtdb/data/~2F?hl=es
+          </script>
+       
     </head>
 
     <body onload="funcionResize();">
