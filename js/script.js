@@ -5,7 +5,7 @@ function funcionResize() {
             $('.container-fluid').css('padding-right', '8%');
             //console.log("768");
         }
-        else if ($(window).width() < 1600 && ($(window).width() >= 768)) {
+        else if ($(window).width() < 1600 ) {
             $('.container-fluid').css('padding-left', '5%');
             $('.container-fluid').css('padding-right', '0%');
             //console.log("1600");
