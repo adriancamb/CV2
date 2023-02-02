@@ -64,11 +64,11 @@
             });
 
 
+            var ingresoAnteriorRef = firebase.database().ref("/ingresoAnterior");
             var fecha = firebase.database().ref("/ultimaFecha");
-            var currentDate = new Date();
-            fecha.update({ultimaFecha: currentDate.toString()});
 
             fecha.transaction(function(currentFecha) {
+                ingresoAnteriorRef.set(currentFecha);
                 return new Date().toString();
                 }, function(error, committed, snapshot) {
                 if (error) {
@@ -77,34 +77,6 @@
                 console.log("La última fecha de ingreso fue: " + snapshot.val());
                 }
             });
-
-
-
-
-
-/*
-            var fecha = firebase.database().ref("/ultimaFecha");
-
-            fecha.transaction(function(currentFecha) {
-                return (currentFecha);
-
-                }, function(error, committed, snapshot) {
-                    if (error) {
-                        console.error(error);
-                    } else if (committed) {
-                        console.log("La última fecha de ingreso fue: " + snapshot.val());
-
-                    }
-                    });
-  */          
-
-
-
-
-
-
-
-
 
             //https://console.firebase.google.com/u/0/project/cv-adrian-con-contador/database/cv-adrian-con-contador-default-rtdb/data/~2F?hl=es
           </script>
