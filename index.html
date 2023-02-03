@@ -49,8 +49,7 @@
             // Referencia a la ubicación del contador de visitas
             //var visitsRef = database.ref("visits");
 
-            var visitsRef = firebase.database().ref("/visits");
-
+            var visitsRef = database.ref("/visits");
 
             visitsRef.transaction(function(currentVisits) {
                 return (currentVisits || 0) + 1;
@@ -63,9 +62,8 @@
                     }
             });
 
-
-            var ingresoAnteriorRef = firebase.database().ref("/ingresoAnterior");
-            var fecha = firebase.database().ref("/ultimaFecha");
+            var ingresoAnteriorRef = database.ref("/ingresoAnterior");
+            var fecha = database.ref("/ultimaFecha");
 
             fecha.transaction(function(currentFecha) {
             ingresoAnteriorRef.set(currentFecha);
